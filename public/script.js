@@ -3,7 +3,7 @@ const videoGrid = document.getElementById('video_call')
 const peer = new Peer(undefined)
 const myVideo = document.createElement('video')
 const mySpan = document.createElement('span')
-// myVideo.muted = true
+myVideo.muted = true
 const peers = {}
 let check = []
 
@@ -12,7 +12,7 @@ let check = []
 // })
 navigator.mediaDevices.getUserMedia({
     video: true,
-    audio: true
+    audio: false
 }).then(stream => {
     addvideo(mySpan, myVideo, stream)
     peer.on('call', call => {
